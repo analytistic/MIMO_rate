@@ -42,6 +42,10 @@ class Train_noTX():
         return Dataset_noTX(paths)
     
 
+    def _get_test_dataset(self):
+        paths = self.cfg.data.test_dataset_paths
+        return Dataset_noTX(paths)
+
     def vali(self):
         # 我们在这个训练集上验证
         self.model.eval()
@@ -123,6 +127,57 @@ class Train_noTX():
                 os.makedirs(f'./checkpoints/{self.cfg.model.model_name}', exist_ok=True)
                 best_acc = acc
                 torch.save(self.model.state_dict(), f'./checkpoints/{self.cfg.model.model_name}/best_model.pth')
+
+
+    def test(self):
+        self.model.to(self.device)
+        self.model.load_state_dict(torch.load(f'./checkpoints/{self.cfg.model.model_name}/best_model.pth'))
+        self._get_test_dataset()
+        self.model.eval()
+
+  
+        pred_rate = []
+        pred_target = []
+        true_target = []
+        true_label = []
+
+        for i, batch in tqdm(enumerate(self.dataloader)):
+            feature, target, label = batch
+            feature = feature.to(self.device)
+            target = target.to(self.device)
+            target = torch.tensor(target).to(self.device)
+            rate = self.model.cacluate_rate(feature, torch.tensor(self.rate_list))
+            pred_rate.extend(rate.cpu().detach().numpy())
+            pred_target.extend(self.model.get_rateindex(feature, torch.tensor(self.rate_list)))
+            true_target.extend(target.cpu().numpy())
+            true_label.extend(label.cpu().numpy())
+            # rate = target = self.model.get_rateindex(feature, torch.tensor(self.rate_list))
+            # pred_rate.extend(rate)
+            # pred_target.extend(target)
+
+          
+
+
+        pred_rate = np.array(pred_rate)
+        pred_target = np.array(pred_target)
+        true_target = np.array(true_target)
+        true_label = np.array(true_label, dtype=int)
+        pred_label = np.array([self.rate_to_label[np.float16(rate)] for rate in pred_target], dtype=int)
+
+        acc = np.sum(pred_label == true_label)/len(pred_label)
+
+        # 反归一化
+        true_target = true_target * self.dataset.var_rate + self.dataset.mean_rate
+        pred_rate = pred_rate * self.dataset.var_rate + self.dataset.mean_rate
+        pred_target = pred_target * self.dataset.var_rate + self.dataset.mean_rate
+
+        mse = mean_squared_error(true_target, pred_rate)
+        mae = mean_absolute_error(true_target, pred_rate)
+        r2 = r2_score(true_target, pred_target)
+
+
+        print(f"TEST MSE: {mse}, MAE: {mae}, R2: {r2}, ACC: {acc}")
+
 
 
 

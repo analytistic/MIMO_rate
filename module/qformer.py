@@ -62,6 +62,7 @@ class Qformer(nn.Module):
         self.v_dim = v_dim
         self.num_heads = num_heads
 
+
         self.cross_layers = nn.ModuleList()
         self.query_norm_layers = nn.ModuleList()
         self.v_norm_layers = nn.ModuleList()

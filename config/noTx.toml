@@ -22,7 +22,7 @@ num_layers = 3
 train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
 
 [loss]
-loss_name = "GaussianCE"
+loss_name = "CE_EV"
 
 
 [loss.margin_loss]
@@ -36,6 +36,10 @@ margin = 0.05
 # GaussianCE
 
 # EMD
+# loss_name="OrdinalBCE" -> ordinal_bce
+# loss_name="CE_EV" -> ce_ev
+# loss_name="WindowPenalty" -> window_penalty
+# loss_name="CE_DistFocal" -> ce_dist_focal
 
 [train]
 epochs = 50

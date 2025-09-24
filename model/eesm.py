@@ -87,6 +87,7 @@ class QformerM(nn.Module):
             num_layers=cfg.model.qformer.num_layers
         )
         self.criterion = Losses(cfg.loss, rate_list=rate_list) 
+        self.bias = nn.Parameter(torch.zeros(10))
         
 
     
@@ -105,6 +106,7 @@ class QformerM(nn.Module):
 
         query = self.qformer(query, x) # B, 10, dim
         logits = self.classifier(query).squeeze(-1) # B, 10
+        logits = logits + self.bias.unsqueeze(0)  # B, 10
         loss = self.criterion(logits, label.long())
         # pred_rate = self.predict(query.flatten(start_dim=1)) # B, 1
         # loss = self.criterion(pred_rate, target)
@@ -120,7 +122,7 @@ class QformerM(nn.Module):
         x = self.Wv(x)
         query = self.qformer(query, x)
         # rate = self.predict(query.flatten(start_dim=1)).squeeze(-1) # B
-        logits = self.classifier(query).squeeze(-1)
+        logits = self.classifier(query).squeeze(-1) + self.bias.unsqueeze(0)
         index = logits.argmax(dim=-1) # B,
         rate = rate_list[index]  # B,
 
@@ -136,7 +138,7 @@ class QformerM(nn.Module):
         query = self.Wq(query).unsqueeze(0).expand(x.shape[0], -1, -1)
         x = self.Wv(x)
         query = self.qformer(query, x)
-        logits = self.classifier(query).squeeze(-1)
+        logits = self.classifier(query).squeeze(-1) + self.bias.unsqueeze(0)
         index = logits.argmax(dim=-1) # B,
         dec_rate = rate_list[index]  # B,
         
