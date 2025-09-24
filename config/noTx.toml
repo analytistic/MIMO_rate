@@ -1,0 +1,43 @@
+
+name = "mimo"
+
+[model]
+# model_name = "LinearEESM"
+model_name = "QformerM"
+
+[model.qformer]
+num_embeddings = 10
+embedding_dim = 64
+
+query_dim = 8
+hid_dim = 8
+q_dim = 8
+v_dim = 8
+num_heads = 1
+num_layers = 3
+
+
+[data]
+# train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0.pkl"]
+train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+
+[loss]
+loss_name = "GaussianCE"
+
+
+[loss.margin_loss]
+margin = 0.05
+# mse
+# l1
+# margin_l1
+# CrossEntropy
+# CE_Dist
+
+# GaussianCE
+
+# EMD
+
+[train]
+epochs = 50
+batch_size = 256
+learning_rate = 0.005
