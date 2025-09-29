@@ -1,0 +1,12 @@
+MSE: 145.885185
+MAE: 2.550040
+R2: 0.934889
+ACC: 0.955078
+RECALL_macro: 0.932576
+F1_macro: 0.928934
+Confusion Matrix (rows=true, cols=pred):
+103 7 0 0
+9 707 33 1
+0 89 783 34
+0 0 38 2893
+d0c1-bfe4-18f0_0_H2d0c1-bfe4-18f0_0_H

@@ -19,10 +19,65 @@ num_layers = 3
 
 [data]
 # train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0.pkl"]
+# 问题2 数据1
 train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/valid/341c-f0d4-70be_0_H.pkl"]
+
+# 问题2 数据2
+# train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/valid/bc98-2983-907b_0_H.pkl"]
+
+# 问题2 数据3
+# train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/valid/d0c1-bfe4-18f0_0_H.pkl"]
+
+# 总
+# train_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl", "/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl", "/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/341c-f0d4-70be/valid/341c-f0d4-70be_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/bc98-2983-907b/valid/bc98-2983-907b_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/notxbf_com_excels_f4/d0c1-bfe4-18f0/valid/d0c1-bfe4-18f0_0_H.pkl"]
+
+
+# 问题3 数据1
+
+
+#train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+#test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/341c-f0d4-70be/train/341c-f0d4-70be_0_H.pkl"]
+#infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/341c-f0d4-70be/valid/341c-f0d4-70be_0_H.pkl"]
+
+# 问题3 数据2
+#train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-d5dc/train/508e-4963-d5dc_0_H.pkl"]
+#test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-d5dc/train/508e-4963-d5dc_0_H.pkl"]
+#infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-d5dc/valid/508e-4963-d5dc_0_H.pkl"]
+
+# 问题3 数据3
+#train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-e122/train/508e-4963-e122_0_H.pkl"]
+#test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-e122/train/508e-4963-e122_0_H.pkl"]
+#infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/508e-4963-e122/valid/508e-4963-e122_0_H.pkl"]
+
+# 问题3 数据4
+#train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl"]
+#test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/bc98-2983-907b/train/bc98-2983-907b_0_H.pkl"]
+#infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/bc98-2983-907b/valid/bc98-2983-907b_0_H.pkl"]
+
+# 问题3 数据5
+#train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+#test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/d0c1-bfe4-18f0/train/d0c1-bfe4-18f0_0_H.pkl"]
+#infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/d0c1-bfe4-18f0/valid/d0c1-bfe4-18f0_0_H.pkl"]
+
+# 问题3 数据6
+# train_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/fc02-9668-e2fd/train/fc02-9668-e2fd_0_H.pkl"]
+# test_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/fc02-9668-e2fd/train/fc02-9668-e2fd_0_H.pkl"]
+# infer_dataset_paths = ["/Users/alex/project/MIMO/data/txbf_com_excels_f4/fc02-9668-e2fd/valid/fc02-9668-e2fd_0_H.pkl"]
 
 [loss]
-loss_name = "CE_EV"
+loss_name = "CrossEntropy"
 
 
 [loss.margin_loss]
@@ -44,4 +99,7 @@ margin = 0.05
 [train]
 epochs = 50
 batch_size = 256
-learning_rate = 0.005
+learning_rate = 0.002
+
+[test]
+batch_size = 256

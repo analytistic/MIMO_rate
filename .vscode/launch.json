@@ -10,6 +10,16 @@
       "console": "integratedTerminal",
       "justMyCode": true,
       "env": { "PYTHONPATH": "${workspaceFolder}" }
+    },
+    {
+      "name": "Debug infer (module)",
+      "type": "python",
+      "request": "launch",
+      "module": "run.run_infer_noTX",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": { "PYTHONPATH": "${workspaceFolder}" }
     }
   ]
 }
